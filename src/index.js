@@ -24,9 +24,8 @@ const imgArray = [myImage1, myImage2, myImage3];
 
 let i = 0;
 carousel.appendChild(imgArray[i]);
-
+let currentImage = imgArray[i];
 function slideToNextImage() {
-  let currentImage = imgArray[i];
   let nextImage = imgArray[i + 1];
   let lastImage = imgArray[imgArray.length - 1];
   if (i < (imgArray.length - 1)) {
@@ -42,23 +41,21 @@ function slideToNextImage() {
   }
 }
 // Doesn't work properly yet.
-let j = 0;
+
 function slideToPreviousImage() {
-  let currentImage = imgArray[j];
-  let prevImage = imgArray[j - 1];
-  // let lastImage = imgArray[imgArray.length - 1];
+  let prevImage = imgArray[i - 1];
   let firstImage = imgArray[0];
-  console.log(j);
-  if (j <= (imgArray.length - 1) && j > 0) {
+  console.log(i);
+  if (i <= (imgArray.length - 1) && i > 0) {
     carousel.replaceChild(currentImage, prevImage);
-    j -= 1;
-    console.log(j);
-    currentImage = imgArray[j];
-    prevImage = imgArray[j - 1];
-  } else if (j <= 0) {
-    j = 2;
-    console.log(j);
-    currentImage = imgArray[j];
+    i -= 1;
+    console.log(i);
+    currentImage = imgArray[i];
+    prevImage = imgArray[i - 1];
+  } else if (i <= 0) {
+    i = 2;
+    console.log(i);
+    currentImage = imgArray[i];
     carousel.replaceChild(firstImage, currentImage);
   }
 }
