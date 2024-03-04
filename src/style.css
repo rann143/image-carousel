@@ -5,28 +5,35 @@ h1 {
 body {
   display: flex;
   justify-content: center;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
 }
 
 .container {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  border: solid 5px black;
+  border: solid 0px rgb(181, 144, 96);
+  background-color: antiquewhite;
+  border-radius: 10px;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 3fr 50px;
+  grid-template-rows: 3fr 200px;
 
 }
 
 .carousel {
   width: 100%;
   height: 500px;
-  background-color: rgba(164, 219, 214, 0.471);
+  align-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
   grid-column: 2/3;
-  grid-row: 1/2
+  grid-row: 1/2;
+  border-radius: 15px;
 }
 
 #previous-btn {
@@ -41,19 +48,19 @@ body {
   justify-self: start;
 }
 
-button {
+.photo-btn {
   height: 50px;
   align-self: center;
   width: 100px;
   margin: 5px;
   border: none;
   border-radius: 5px;
-  background-color: rgba(240, 240, 240, 0.597);
+  background-color: rgba(254, 218, 147, 0.789);
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.153);
 }
 
-button:hover {
-  background-color: rgba(192, 192, 192, 0.597)
+.photo-btn:hover {
+  background-color: rgba(254, 201, 95, 0.789);
 }
 
 .curtain{
@@ -63,9 +70,35 @@ button:hover {
 }
 
 .visible {
+  
   height: 90%;
   opacity: 1;
+  border-radius: 20px;
 }
+
+.scroller{
+  justify-self: center;
+  align-self: start;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.nav-btn {
+  width: 10px;
+  height: 15px;
+  border: solid 2px black;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 50%;
+}
+/* 
+.nav-btn:focus{
+  background-color: black;
+} */
+
+.filled {
+  background-color: black;
+}
+
 
 
 
