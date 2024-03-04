@@ -25,39 +25,44 @@ const imgArray = [myImage1, myImage2, myImage3];
 let i = 0;
 carousel.appendChild(imgArray[i]);
 let currentImage = imgArray[i];
+
 function slideToNextImage() {
   let nextImage = imgArray[i + 1];
   let lastImage = imgArray[imgArray.length - 1];
   if (i < (imgArray.length - 1)) {
+    // replace the current image with the next image
     carousel.replaceChild(nextImage, currentImage);
     i += 1;
     currentImage = imgArray[i];
     nextImage = imgArray[i + 1];
   } else if (i >= (imgArray.length - 1)) {
+    // set current image to the first image in the array
     i = 0;
     currentImage = imgArray[i];
-
+    // replace the last image in the array with current image
     carousel.replaceChild(currentImage, lastImage);
   }
+  console.log(i);
+  return i;
 }
-// Doesn't work properly yet.
 
 function slideToPreviousImage() {
   let prevImage = imgArray[i - 1];
   let firstImage = imgArray[0];
-  console.log(i);
   if (i <= (imgArray.length - 1) && i > 0) {
-    carousel.replaceChild(currentImage, prevImage);
+    carousel.replaceChild(prevImage, currentImage);
     i -= 1;
-    console.log(i);
     currentImage = imgArray[i];
     prevImage = imgArray[i - 1];
   } else if (i <= 0) {
+    // set current image to the last image in the array
     i = 2;
-    console.log(i);
     currentImage = imgArray[i];
-    carousel.replaceChild(firstImage, currentImage);
+    // replace first image in the array with the current image(set to the last image in the array)
+    carousel.replaceChild(currentImage, firstImage);
   }
+  console.log(i);
+  return i;
 }
 
 const nextBtn = document.querySelector('#next-btn');
