@@ -12,6 +12,10 @@ body {
   height: 100%;
   box-sizing: border-box;
   border: solid 5px black;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 3fr 50px;
+
 }
 
 .carousel {
@@ -21,4 +25,47 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  grid-column: 2/3;
+  grid-row: 1/2
 }
+
+#previous-btn {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: end;
+}
+
+#next-btn {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  justify-self: start;
+}
+
+button {
+  height: 50px;
+  align-self: center;
+  width: 100px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(240, 240, 240, 0.597);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.153);
+}
+
+button:hover {
+  background-color: rgba(192, 192, 192, 0.597)
+}
+
+.curtain{
+  height: 90%;
+  opacity: 0;
+  transition: height 1s ease, opacity 1s ease-in-out;
+}
+
+.visible {
+  height: 90%;
+  opacity: 1;
+}
+
+
+
